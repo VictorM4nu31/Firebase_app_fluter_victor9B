@@ -1,8 +1,6 @@
 import 'package:fire_app/firebase_metodos.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const AddNombre());
-
 class AddNombre extends StatefulWidget {
   const AddNombre({super.key});
 
@@ -11,37 +9,34 @@ class AddNombre extends StatefulWidget {
 }
 
 class _AddNombreState extends State<AddNombre> {
-  //Controlador para guardar el valor de la columna
   TextEditingController nombreControlador = TextEditingController(text: "");
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Material App',
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Material App Bar'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(18.0),
-          child: Column (
-            children: [
-              TextField(
-                //Mando llamar al controlador
-                controller: nombreControlador,
-                decoration: InputDecoration(
-                  hintText: 'Ingresa un nombre',
-                ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Agregar Nombre'),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Column(
+          children: [
+            TextField(
+              controller: nombreControlador,
+              decoration: const InputDecoration(
+                hintText: 'Ingresa un nombre',
               ),
-              ElevatedButton(
-                onPressed: () async{
+            ),
+            ElevatedButton(
+              onPressed: () async {
                 await leerNombre(nombreControlador.text).then((_) {
                   Navigator.pop(context);
                 });
-                //print(nombreControlador.text); //Corroborar que el controalador funciona en la consola de depuración
-              }, child: const Text("Guardar"))
-            ],
-          ),
-        )
+              },
+              child: const Text("Guardar"),
+            )
+          ],
+        ),
       ),
     );
   }
