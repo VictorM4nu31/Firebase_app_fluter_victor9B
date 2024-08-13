@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "641869113667",
+    "project_id": "angeles-victor-9b",
+    "storage_bucket": "angeles-victor-9b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:641869113667:android:964a80350a48eff6a827f6",
+        "android_client_info": {
+          "package_name": "com.example.fire_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAUcHSEXb9EQlRlERCH-rqEeVMV0f1WwcA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
